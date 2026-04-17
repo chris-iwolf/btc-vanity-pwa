@@ -1,0 +1,143 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: #0d0d0d;
+  --foreground: #e0e0e0;
+  --card: #141414;
+  --card-border: #242424;
+  --card-inset: #0a0a0a;
+  --card-inset-border: #1e1e1e;
+  --card-inset-deep: #050505;
+  --primary: #f7931a;
+  --primary-hover: #ffa52a;
+  --primary-foreground: #000000;
+  --destructive: #e57373;
+  --destructive-bg: #c0392b;
+  --destructive-hover: #e74c3c;
+  --success: #4caf50;
+  --success-bg: #1a2e1a;
+  --muted: #555555;
+  --muted-foreground: #888888;
+  --muted-strong: #aaaaaa;
+  --border: #2e2e2e;
+  --border-strong: #3a3a3a;
+  --surface: #1e1e1e;
+  --surface-hover: #2a2a2a;
+  --radius: 0.625rem;
+}
+
+@theme inline {
+  --font-sans: 'Geist', 'Geist Fallback', system-ui, sans-serif;
+  --font-mono: 'Geist Mono', 'Courier New', monospace;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-border: var(--card-border);
+  --color-card-inset: var(--card-inset);
+  --color-card-inset-border: var(--card-inset-border);
+  --color-card-inset-deep: var(--card-inset-deep);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-bg: var(--destructive-bg);
+  --color-destructive-hover: var(--destructive-hover);
+  --color-success: var(--success);
+  --color-success-bg: var(--success-bg);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted-strong: var(--muted-strong);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-surface: var(--surface);
+  --color-surface-hover: var(--surface-hover);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  html {
+    background: var(--background);
+    color: var(--foreground);
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    min-height: 100vh;
+    overscroll-behavior-y: contain;
+  }
+  input,
+  select,
+  button,
+  textarea {
+    font-family: inherit;
+  }
+}
+
+@layer utilities {
+  .touch-target {
+    min-height: 44px;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulseDot {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.3s ease;
+}
+
+.animate-pulse-dot {
+  animation: pulseDot 1.2s infinite;
+}
+
+/* Native-select chevron */
+.select-chevron {
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23666'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 32px;
+}
+
+/* Range input styling */
+input[type='range'] {
+  accent-color: var(--primary);
+  height: 24px;
+}
+
+/* Prevent iOS auto-zoom on inputs */
+@supports (-webkit-touch-callout: none) {
+  input[type='text'],
+  select {
+    font-size: 16px;
+  }
+}
