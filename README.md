@@ -89,8 +89,7 @@ BTC donation address (Taproot):
 `bc1pyd4l4l964dxz80d5ql4hy55m6xfs7v30n5ctj3h4m5qsauuk5hsqvhappy`
 
 Wallet deep link:
-
-`bitcoin:bc1pyd4l4l964dxz80d5ql4hy55m6xfs7v30n5ctj3h4m5qsauuk5hsqvhappy`
+<a href="bitcoin:bc1pyd4l4l964dxz80d5ql4hy55m6xfs7v30n5ctj3h4m5qsauuk5hsqvhappy">Send Tip [bc1p...happy]</a>
 
 You can also support by starring the repo:
 
